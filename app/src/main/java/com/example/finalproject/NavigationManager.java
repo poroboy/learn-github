@@ -23,6 +23,7 @@ public class NavigationManager implements NavigationView.OnNavigationItemSelecte
         this.navigationView.setNavigationItemSelectedListener(this);
     }
 
+
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
@@ -30,23 +31,20 @@ public class NavigationManager implements NavigationView.OnNavigationItemSelecte
         if (id == R.id.nav_home) {
             // Handle the home action
             startActivity(new Intent(activity, HomePageActivity.class));
-        } else if (id == R.id.nav_profile) {
-            // Handle the profile action
-            //startActivity(new Intent(activity, ProfileActivity.class));
-        } else if (id == R.id.nav_myplans) {
+        } else if (id == R.id.nav_myplans) {  // Corrected this line
             // Handle the my plans action
-            //startActivity(new Intent(activity, MyPlansActivity.class));
+            startActivity(new Intent(activity, MyPlanActivity.class));
         } else if (id == R.id.nav_buynewplan) {
             // Handle the buy new plan action
-            //startActivity(new Intent(activity, BuyNewPlanActivity.class));
+            startActivity(new Intent(activity, HomePageActivity.class));
         }
 
         drawerLayout.closeDrawer(GravityCompat.START);
         return true;
     }
 
+
     public void startActivity(Intent intent) {
         activity.startActivity(intent);
     }
 }
-

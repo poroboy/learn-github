@@ -31,15 +31,11 @@ public abstract class BaseActivity extends AppCompatActivity {
     }
 
     private void navigateTo(int itemId) {
-        switch (itemId) {
-
-            case R.id.nav_myplans:
-                startActivity(new Intent(this, MyPlanActivity.class));
-                break;
-            case R.id.nav_buynewplan:
-                startActivity(new Intent(this, HomePageActivity.class));
-                break;
-            // ... handle other navigation items as needed ...
+        if (itemId == R.id.nav_buynewplan) {
+            startActivity(new Intent(this, MyPlanActivity.class));
+        } else if (itemId == R.id.nav_buynewplan) {
+            startActivity(new Intent(this, HomePageActivity.class));
         }
+
     }
 }
