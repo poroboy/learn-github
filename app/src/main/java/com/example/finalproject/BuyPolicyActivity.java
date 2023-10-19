@@ -1,9 +1,12 @@
 package com.example.finalproject;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -21,14 +24,27 @@ public class BuyPolicyActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_buy_policy);
 
+
+
         // Initialize the views
         insuranceTypeSpinner = findViewById(R.id.spinner_insurance_type);
         costTextView = findViewById(R.id.tv_cost);
         coverage1CheckBox = findViewById(R.id.cb_coverage1);
         coverage2CheckBox = findViewById(R.id.cb_coverage2);
         insuranceCosts = getResources().getIntArray(R.array.insurance_costs);
+        Button loginButton = findViewById(R.id.btn_submit);
 
-        coverage1CheckBox.setOnCheckedChangeListener((buttonView, isChecked) -> updateTotalCost());
+        loginButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(BuyPolicyActivity.this, MyPlanActivity.class);
+                startActivity(intent);
+
+        }
+    });
+
+
+                coverage1CheckBox.setOnCheckedChangeListener((buttonView, isChecked) -> updateTotalCost());
         coverage2CheckBox.setOnCheckedChangeListener((buttonView, isChecked) -> updateTotalCost());
 
         // Set the listener for the spinner
