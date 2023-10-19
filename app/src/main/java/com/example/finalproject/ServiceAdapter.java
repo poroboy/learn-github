@@ -1,5 +1,6 @@
 package com.example.finalproject;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -61,9 +62,14 @@ public class ServiceAdapter extends RecyclerView.Adapter<ServiceAdapter.ServiceV
             btnBuyPolicy.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    // Handle button click for buying policy
-                    // You can start the BuyPolicyActivity or perform any other action
-                    // based on the selected service
+                    int position = getAdapterPosition();
+                    Service selectedService = serviceList.get(position);
+
+                    Intent intent = new Intent(itemView.getContext(), BuyPolicyActivity.class);
+                    intent.putExtra("serviceName", selectedService.getName());
+                    intent.putExtra("serviceDescription", selectedService.getDescription());
+                    itemView.getContext().startActivity(intent);
+
                 }
             });
         }
