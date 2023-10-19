@@ -3,6 +3,7 @@ package com.example.finalproject;
 import android.app.Activity;
 import android.content.Intent;
 import android.view.MenuItem;
+import android.util.Log;
 
 import androidx.annotation.NonNull;
 import androidx.core.view.GravityCompat;
@@ -23,17 +24,19 @@ public class NavigationManager implements NavigationView.OnNavigationItemSelecte
         this.navigationView.setNavigationItemSelectedListener(this);
     }
 
-
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
+        Log.d("NavManager", "Item clicked with ID: " + id);  // Moved this line here
 
         if (id == R.id.nav_home) {
             // Handle the home action
             startActivity(new Intent(activity, HomePageActivity.class));
-        } else if (id == R.id.nav_myplans) {  // Corrected this line
+
+        } else if (id == R.id.nav_myplans) {
             // Handle the my plans action
-            startActivity(new Intent(activity, MyPlanActivity.class));
+            Intent intent = new Intent(activity.getApplicationContext(), MyPlanActivity.class);
+            activity.startActivity(intent);
         } else if (id == R.id.nav_buynewplan) {
             // Handle the buy new plan action
             startActivity(new Intent(activity, HomePageActivity.class));
@@ -42,7 +45,6 @@ public class NavigationManager implements NavigationView.OnNavigationItemSelecte
         drawerLayout.closeDrawer(GravityCompat.START);
         return true;
     }
-
 
     public void startActivity(Intent intent) {
         activity.startActivity(intent);
