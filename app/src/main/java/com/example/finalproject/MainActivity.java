@@ -26,7 +26,6 @@ public class MainActivity extends AppCompatActivity {
     private NavigationView navigationView;
     private Toolbar toolbar;
     private Button btnAction;
-    private NavigationManager navigationManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,18 +33,16 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         drawerLayout = findViewById(R.id.drawer_layout);
-        navigationView = findViewById(R.id.nav_view);
         toolbar = findViewById(R.id.toolbar);
         btnAction = findViewById(R.id.btn_action);
 
         setSupportActionBar(toolbar);
 
-        navigationManager = new NavigationManager(this, drawerLayout, navigationView);
 
         btnAction.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                navigationManager.startActivity(new Intent(MainActivity.this, activity_login.class));
+
             }
         });
     }
