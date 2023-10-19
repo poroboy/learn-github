@@ -26,7 +26,7 @@ public class HomePageActivity extends AppCompatActivity {
     private NavigationView navigationView;
     private ServiceAdapter serviceAdapter;
     private TextView userNameIDTextView;
-    private NavigationManager navigationManager;
+
 
 
         @Override
@@ -42,8 +42,6 @@ public class HomePageActivity extends AppCompatActivity {
             NavigationView navigationView = findViewById(R.id.nav_view);
 
 
-            View headerView = navigationView.getHeaderView(0);
-            userNameIDTextView = headerView.findViewById(R.id.header_name);
             String userID = getIntent().getStringExtra("userID");
             userNameIDTextView.setText(userID);
 

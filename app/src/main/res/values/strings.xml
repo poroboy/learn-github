@@ -1,11 +1,9 @@
 <resources>
     <string name="app_name">LifeGuard Insurance</string>
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_open">Open navigation drawer</string>
+    <string name="nav_close">Close navigation drawer</string>
     <string name="welcome_message">Welcome to LifeGuard Insurance</string>
     <string name="click">Click to Login!</string>
-    <string name="open">Open navigation drawer</string>
-    <string name="close">Close navigation drawer</string>
 
 
 </resources>
