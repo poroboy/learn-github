@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Insurance Types for Spinner Dropdown -->
+    <string-array name="insurance_types">
+        <item>ครอบคลุม</item>
+        <item>ไฟไหม้</item>
+        <item>การโจรกรรม</item>
+        <item>บาดเจ็บส่วนบุคคล</item>
+        <item>รถชน</item>
+    </string-array>
+
+    <!-- Corresponding Costs for Insurance Types -->
+    <integer-array name="insurance_costs">
+        <item>1000</item>
+        <item>800</item>
+        <item>600</item>
+        <item>400</item>
+        <item>500</item>
+    </integer-array>
+
+</resources>
